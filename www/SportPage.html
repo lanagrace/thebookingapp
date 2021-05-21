@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+    <title>SportPage</title>
+</head>
+    <body>
+            <!--Navigation bar-->
+            <div id="nav-placeholder">
+
+            </div>
+
+            <script>
+                $(function(){
+                $("#nav-placeholder").load("nav.html");
+                });
+            </script>
+            <!--end of Navigation bar-->
+        
+        
+            <h6>Available</h6>
+
+            <div class="Available">
+                <div class="container">
+                    <div class="row">
+                        <div class="col m6">
+                            <div class="card horizontal">
+                                <div class="card-image">
+                                    <div id="map"></div>
+                                </div>
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <p>Sport</p>
+                                    </div>
+                                    <div class="card-action">
+                                            <!-- Modal Trigger -->
+                                            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Availability</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <h6>Not Available</h6>
+        <div class="notAvailable">
+            <div class="container">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="card horizontal">
+                            <div class="card-image">
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <p>Sport</p>
+                                </div>
+                                <div class="card-action">
+                                     <!-- Modal Trigger -->
+                                     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Availability</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Modal Header</h4>
+
+                <hr>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col s8 offset-s2">
+                            <div id="calendar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col s12">
+                        <form method="POST" action="/Availability">
+                            <!-- This is the text field for the Title -->
+                            <div class="input-field">
+                                <input name="title" id="title" type="text" class="validate">
+                                <label for="title">First name</label>
+                            </div>
+                            <!-- This is the text area for the Body -->
+                            <div class="input-field">
+                                <input name="title" id="title" type="text" class="validate">
+                                <label for="body">Last name</label>
+                            </div>
+                            <!-- This is the submit button -->
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Reserve
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                
+        
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="dateAddModal" class="modal">
+            <div class="modal-content">
+                <h4>Date Select</h4>
+                <div class="row">
+                    <form class="col s8 offset-s2" action="/addDate" method="POST">
+                        <div class="input-field">
+                            <input placeholder="Placeholder" id="date" name="date" type="text" class="validate">
+                            <label for="date">Date</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+        
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -4,13 +4,42 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<link rel="stylesheet" href="https://use.typekit.net/mdb1ags.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
-	<title>Title</title>
+	<title>Call Your Court</title>
 </head>
 
 <body>
 
-	<script src="js/script.js"></script>
+	
+   <!--Navigation bar-->
+		<div id="nav-placeholder">
+
+		</div>
+
+	<script>
+		$(function(){
+		$("#nav-placeholder").load("nav.html");
+		});
+	</script>
+	<!--end of Navigation bar-->
+
+		<div class="container">
+			<div class="sports">
+				<div class="row" id="sportList">
+				
+			
+			</div>
+		</div>
+
+			
+		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+		<script src="js/script.js"></script>
 </body>
 
 </html>

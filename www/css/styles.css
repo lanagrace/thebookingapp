@@ -1,0 +1,60 @@
+.nav-wrapper{
+    padding-left: 20px;
+}
+
+.container{
+    padding-top: 30px;
+}
+
+body{
+    background-color: #7e57c2;
+}
+
+nav {
+    color: black;
+}
+
+nav a{
+    color: black;
+}
+
+nav ul li a{
+    color: black;
+
+  }
+
+.card {
+    border-radius: 1em;
+    overflow: hidden;
+  }
+
+#map{
+    height: 100%;
+}
+
+.card-image{
+    width: 30vw;
+   
+}
+
+.card-title {
+    font-family: niveau-grotesk-small-caps, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+}
+
+.card .card-title{
+    font-size: 26pt;
+    font-weight: 700;
+}
+
+.waves-effect{
+    width: 100%;
+    border-radius: 2em;
+    font-family: niveau-grotesk,sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14pt;
+    
+}
