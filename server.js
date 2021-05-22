@@ -3,6 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 const Sport = require('./models/Sport.js');
 const Court = require('./models/Court.js');
+const url = require('url');
 
 var port = 3000;
 var dbURL = 'mongodb://localhost:27017/bookingapp';
@@ -39,6 +40,7 @@ app.get('/getSport', (req, res)=>{
 })
 
 
+
 app.post('/addCourt', (req,res) => {
     //const lat = req.body.lat;
     
@@ -60,6 +62,31 @@ app.post('/addCourt', (req,res) => {
    
 });
 
+
+app.get('/courts/:id', (req, res)=>{
+    var id = req.params.id;
+
+    res.redirect(url.format({
+        pathname:"/courtPage.html",
+        query: {
+           "id": id,
+         }
+      }));; 
+
+});
+
+app.get('/getCourt/:id', (req, res)=>{
+    var id = req.params.id;
+    if (id === null || id === 'null') {
+        res.status(400).send('id not desined bok')
+        return;
+    }
+    Court.find({sport:id}, (err, docs) =>{
+
+        if (err) throw err;
+        res.send(docs);
+    }); 
+});
 
 mongoose.connect(dbURL, {
     useUnifiedTopology: true,
