@@ -25,23 +25,25 @@
             </script>
             <!--end of Navigation bar-->
         
-        
-            <h6>Available</h6>
+            <h1>SPORT</h1>
 
-            <div class="Available">
-                <div class="container">
-                    <div class="row" id="courts">
+
+            <!-- <h4>Available courts</h4>
+
+            <div class="Available"> -->
+                <!-- <div class="container"> -->
+                   <!--  <div class="row">
+                        <div class="col m5" id="courts"></div>
+                        <div class="col m4 offset-s2">
+                           
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-
-                <hr>
+            </div> -->
+           
+           <div id="map"></div>
+            
+             <!-- <hr>
 
                 <div class="container">
                     <div class="row">
@@ -51,40 +53,23 @@
                     </div>
                 </div>
 
-                <hr>
+                <hr> -->
+        <!-- Modal Structure -->
 
-                <div class="row">
-                    <div class="col s12">
-                        <form method="POST" action="/Availability">
-                            <!-- This is the text field for the Title -->
-                            <div class="input-field">
-                                <input name="title" id="title" type="text" class="validate">
-                                <label for="title">First name</label>
-                            </div>
-                            <!-- This is the text area for the Body -->
-                            <div class="input-field">
-                                <input name="title" id="title" type="text" class="validate">
-                                <label for="body">Last name</label>
-                            </div>
-                            <!-- This is the submit button -->
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Reserve
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                
-        
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
+        <div id="bookCourt" class="modal">
+            <div class="modal-content">
+              <h4>Book a court</h4>
+              <p>Timetable + time + name </p>
             </div>
-
-        </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green black-text btn-flat">Book</a>
+            </div>
+          </div>
+        <!-- Modal Trigger -->
+    
 
         <!-- Modal Structure -->
-        <div id="dateAddModal" class="modal">
+    <!--     <div id="dateAddModal" class="modal">
             <div class="modal-content">
                 <h4>Date Select</h4>
                 <div class="row">
@@ -96,8 +81,46 @@
                     </form>
                 </div>
             </div>
+        </div> -->
+
+        <div class="container">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" class="datepicker">
+                    <input type="text" class="timepicker">
+                </div>
+            </div>
         </div>
-        
+        <div class="grid-container">
+            <div class="grid-item"><button id="color" onclick="changeColor()">8:00</button></div>
+            <div class="grid-item"><button id="color">8:30</button></div>
+            <div class="grid-item"><button id="color">9:00</button></div>
+            <div class="grid-item"><button id="color">9:30</button></div>
+            <div class="grid-item"><button id="color">10:00</button></div>
+            <div class="grid-item"><button id="color">10:30</button></div>
+            <div class="grid-item"><button id="color">11:00</button></div>
+            <div class="grid-item"><button id="color">11:30</button></div>
+            <div class="grid-item"><button id="color">12:00</button></div>
+            <div class="grid-item"><button id="color">12:30</button></div>
+            <div class="grid-item"><button id="color">13:00</button></div>
+            <div class="grid-item"><button id="color">13:30</button></div>
+            <div class="grid-item"><button id="color">14:00</button></div>
+            <div class="grid-item"><button id="color">14:30</button></div>
+            <div class="grid-item"><button id="color">15:00</button></div>
+            <div class="grid-item"><button id="color">15:30</button></div>
+            <div class="grid-item"><button id="color">16:00</button></div>
+            <div class="grid-item"><button id="color">16:30</button></div>
+            <div class="grid-item"><button id="color">17:00</button></div>
+            <div class="grid-item"><button id="color">17:30</button></div>
+            <div class="grid-item"><button id="color"> 17:30</button></div>
+            <div class="grid-item"><button id="color">18:00</button></div>
+            <div class="grid-item"><button id="color">18:30</button></div>
+            <div class="grid-item"><button id="color">19:00</button></div>
+            <div class="grid-item"><button id="color">19:30</button></div>
+            <div class="grid-item"><button id="color">20:00</button></div>
+            <div class="grid-item"><button id="color">20:30</button></div>
+            <div class="grid-item"><button id="color">21:00</button></div> 
+        </div>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
