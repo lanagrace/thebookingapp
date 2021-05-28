@@ -14,7 +14,7 @@ fetch(getURL)
               <p></p>
             </div>
             <div class="card-action">
-              <a class="waves-effect waves-light btn deep-purple lighten-2" href="/courts/${sport._id}"> find a court </a>
+              <a class="waves-effect waves-light btn deep-purple lighten-2" style=" width: 100%" href="/courts/${sport._id}"> find a court </a>
             </div>
           </div>
         </div> ` 

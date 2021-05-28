@@ -7,6 +7,7 @@ var CourtSchema = new Schema({
     lat: String,
     lng: String,
     w3w: String, 
+    slot: [Number],
 
     sport: { type: mongoose.Schema.Types.ObjectId, ref: 'Sport' },
 

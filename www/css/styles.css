@@ -15,11 +15,16 @@ nav {
 }
 
 nav a{
-    color: black;
+    color: #6b51c0;
 }
 
 nav ul li a{
-    color: black;
+    color: #795dd6;
+    font-family: novecento-sans-wide, sans-serif;
+
+font-weight: 300;
+
+font-style: normal;
 
   }
 
@@ -31,8 +36,8 @@ nav ul li a{
 
 #map{
     height: 70vh;
-    margin-left: 30vh;
-    margin-right: 30vh;
+    margin-left: 10vh;
+    margin-right: 10vh;
     margin-bottom: 20vh;
 }
 
@@ -54,7 +59,6 @@ nav ul li a{
 }
 
 .waves-effect{
-    width: 50%;
     border-radius: 2em;
     font-family: niveau-grotesk,sans-serif;
     font-weight: 300;
@@ -73,12 +77,23 @@ nav ul li a{
     font-size: 14pt;
 }
 
+.titleColor {
+    display: flex;
+    justify-content: center;
+   
+}
+
 h1{
     text-align: center;
-    margin-bottom: 10vh;
-    font-family: novecento-sans, sans-serif;
+    margin-bottom: 5vh;
+    padding: 10px;
+    font-family: novecento-sans-wide, sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 32pt;
+    color: white;
+    background-color: #795dd6;
+    border-radius: 2em;
 }
 
 h4{
@@ -122,3 +137,18 @@ h4{
     border: none;
 }
 
+.mapColor {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 1px;
+    border-radius: 50px;
+    justify-content: center;
+    background-color: #795dd6;
+}
+
+/* .titleColor {
+    background-color: #795dd6;
+    justify-content: center;
+    border-radius: 2em;
+} */

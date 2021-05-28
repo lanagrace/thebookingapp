@@ -24,9 +24,9 @@
                 });
             </script>
             <!--end of Navigation bar-->
-        
-            <h1>SPORT</h1>
-
+            <div class="titleColor">
+                <h1>   BASKETBALL   </h1>
+            </div>
 
             <!-- <h4>Available courts</h4>
 
@@ -40,9 +40,9 @@
                     </div>
                 </div>
             </div> -->
-           
+           <section class="mapColor">
            <div id="map"></div>
-            
+            </section>
              <!-- <hr>
 
                 <div class="container">
@@ -59,10 +59,17 @@
         <div id="bookCourt" class="modal">
             <div class="modal-content">
               <h4>Book a court</h4>
-              <p>Timetable + time + name </p>
+              <div class="row">
+                <div class="input-field col s12">
+                    <select class="browser-default" id="select">
+                    <option  value="-1" disabled selected>Select a slot</option>
+                    </select>
+                   <!--  <label>Materialize Select</label> -->
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-green black-text btn-flat">Book</a>
+              <button id="buton" class="modal-close waves-effect waves-green black-text btn-flat">Book</button>
             </div>
           </div>
         <!-- Modal Trigger -->
@@ -91,9 +98,11 @@
                 </div>
             </div>
         </div>
+
+        <p>Date/Time: <span id="datetime"></span></p>
         <div class="grid-container">
-            <div class="grid-item"><button id="color" onclick="changeColor()">8:00</button></div>
-            <div class="grid-item"><button id="color">8:30</button></div>
+            <div class="grid-item"><button id="color">8:00</button></div>
+            <div class="grid-item"><button id="color"><time datetime='8:30' id="test"> 8:30 </time></button></div>
             <div class="grid-item"><button id="color">9:00</button></div>
             <div class="grid-item"><button id="color">9:30</button></div>
             <div class="grid-item"><button id="color">10:00</button></div>
@@ -112,7 +121,7 @@
             <div class="grid-item"><button id="color">16:30</button></div>
             <div class="grid-item"><button id="color">17:00</button></div>
             <div class="grid-item"><button id="color">17:30</button></div>
-            <div class="grid-item"><button id="color"> 17:30</button></div>
+            <div class="grid-item"><button id="color">17:30</button></div>
             <div class="grid-item"><button id="color">18:00</button></div>
             <div class="grid-item"><button id="color">18:30</button></div>
             <div class="grid-item"><button id="color">19:00</button></div>
