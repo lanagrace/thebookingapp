@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/mdb1ags.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -42,6 +43,9 @@
             </div> -->
            <section class="mapColor">
            <div id="map"></div>
+                <section class="descColor">
+                    <p class="desc">Choose which court you'd like to use and find out if it's already taken or not</p>
+                </section>
             </section>
              <!-- <hr>
 
@@ -90,16 +94,7 @@
             </div>
         </div> -->
 
-        <div class="container">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input type="text" class="datepicker">
-                    <input type="text" class="timepicker">
-                </div>
-            </div>
-        </div>
-
-        <p>Date/Time: <span id="datetime"></span></p>
+    <!--     <p>Date/Time: <span id="datetime"></span></p>
         <div class="grid-container">
             <div class="grid-item"><button id="color">8:00</button></div>
             <div class="grid-item"><button id="color"><time datetime='8:30' id="test"> 8:30 </time></button></div>
@@ -129,7 +124,7 @@
             <div class="grid-item"><button id="color">20:00</button></div>
             <div class="grid-item"><button id="color">20:30</button></div>
             <div class="grid-item"><button id="color">21:00</button></div> 
-        </div>
+        </div> -->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>

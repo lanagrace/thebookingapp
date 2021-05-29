@@ -79,7 +79,7 @@ app.get('/courts/:id', (req, res)=>{
 app.get('/getCourt/:id', (req, res)=>{
     var id = req.params.id;
     if (id === null || id === 'null') {
-        res.status(400).send('id not desined bok')
+        res.status(400).send('id not recognised')
         return;
     }
     Court.find({sport:id}, (err, docs) =>{
@@ -93,14 +93,17 @@ app.get('/getCourt/:id', (req, res)=>{
 
 app.post('/addTime', (req,res) => {
     //const lat = req.body.lat;
-    const intervalId = req.query.interval;
+    let intervalId = req.query.interval;
     var courtId = req.query.court;
-    Court.updateOne(
-        { _id: mongoose.Types.ObjectId(courtId) }, 
-        { $push: { slot: intervalId } },
+    Court.findOneAndUpdate(
+        { _id: courtId }, 
+        { $push: { "slot": intervalId },
+        upsert: true },
         
-    );
-    console.log(intervalId, courtId);
+    ).then((result)=>{
+        console.log(result)
+    })
+   /*  console.log(resp); */
     res.status(200).json({ msg: 'ok' })
     
 });

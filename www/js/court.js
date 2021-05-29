@@ -28,7 +28,7 @@ fetch(getURL)
       var marker = L.marker([court.lat, court.lng]).addTo(map);
         marker.bindPopup(`
         <h6>${court.name}</h6>
-        <a id="btn1"  class="waves-effect waves-light btn modal-trigger" href="#bookCourt">Book</a>
+        <a id="btn1" data-id="${court._id}" class="waves-effect waves-light btn modal-trigger" href="#bookCourt">Book</a>
         `)
 
         updateTime();
@@ -38,6 +38,16 @@ fetch(getURL)
   
   })/* .addTo(map); */ });
 
+  var cId;
+  $(document).on("click", ".modal-trigger", function () {
+    var courtId = $(this).data('id');
+    console.log(courtId);
+    cId = courtId;
+    // As pointed out in comments, 
+    // it is unnecessary to have to manually call the modal.
+    // $('#addBookDialog').modal('show');
+});
+
   var btn = document.getElementById('buton')
   btn.addEventListener('click', updateTime, false)
   function updateTime(){
@@ -46,7 +56,7 @@ fetch(getURL)
     console.log(option)
     if(option >= 0){
       console.log('valid option')
-      var postURL = `/addTime?court=${id}&interval=${option}`;
+      var postURL = `/addTime?court=${cId}&interval=${option}`;
       fetch(postURL, {
         method: "POST",
           headers: {
@@ -98,8 +108,8 @@ fetch(getURL)
     var date = document.getElementById('datetime')
     var test = document.getElementById('test')
     var dt = new Date();
-    document.getElementById("datetime").innerHTML = ((("0"+dt.getHours()+1).slice(-2)) +":"+ (("0"+dt.getMinutes()+1).slice(-2)));;
-/* 
+/*     document.getElementById("datetime").innerHTML = ((("0"+dt.getHours()+1).slice(-2)) +":"+ (("0"+dt.getMinutes()+1).slice(-2)));;
+ *//* 
     if (datetime > test){
       test.style = "background-color: blue";
     }
