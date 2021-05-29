@@ -46,6 +46,26 @@ fetch(getURL)
     // As pointed out in comments, 
     // it is unnecessary to have to manually call the modal.
     // $('#addBookDialog').modal('show');
+    var select = document.getElementById('select');
+    while (select.options.length > 0) {
+      select.remove(0);
+    }
+    arr = ['8:00-9:00', '9:00-10:00']
+    fetch(`/getReservation?court=${cId}&interval=1`)
+    .then(res => res.json())
+    .then((data) =>{
+      console.log("reservations", data);
+      for(var i=0; i<arr.length; i++) {
+        if(!data.includes(i)){
+          var option = document.createElement("OPTION")
+          txt = document.createTextNode(arr[i]);
+          option.appendChild(txt);
+          option.setAttribute("value",i);
+          select.insertBefore(option, select.lastChild);
+        }
+      }
+    })
+
 });
 
   var btn = document.getElementById('buton')
@@ -56,7 +76,7 @@ fetch(getURL)
     console.log(option)
     if(option >= 0){
       console.log('valid option')
-      var postURL = `/addTime?court=${cId}&interval=${option}`;
+      var postURL = `/addReservation?court=${cId}&interval=${option}`;
       fetch(postURL, {
         method: "POST",
           headers: {
@@ -70,17 +90,6 @@ fetch(getURL)
     }
   }
    
-
- var select = document.getElementById('select'),
- arr = ['8:00-9:00', '9:00-10:00']
-
- for(var i=0; i<arr.length; i++) {
-   var option = document.createElement("OPTION")
-   txt = document.createTextNode(arr[i]);
-   option.appendChild(txt);
-   option.setAttribute("value",i);
-   select.insertBefore(option, select.lastChild);
- }
 
  
 

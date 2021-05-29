@@ -3,7 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 const Sport = require('./models/Sport.js');
 const Court = require('./models/Court.js');
-const Time = require('./models/Time.js');
+const Reservation = require('./models/Reservation.js');
 const url = require('url');
 
 var port = 3000;
@@ -89,31 +89,46 @@ app.get('/getCourt/:id', (req, res)=>{
     }); 
 });
 
-
-
-app.post('/addTime', (req,res) => {
+app.post('/addReservation', (req,res) => {
     //const lat = req.body.lat;
-    let intervalId = req.query.interval;
-    var courtId = req.query.court;
-    Court.findOneAndUpdate(
+    let interval = req.query.interval;
+    var courtId = mongoose.Types.ObjectId(req.query.court);
+    let reservation = new Reservation({
+        courtId,
+        interval,
+    })
+    reservation.save();
+   /*  Court.findOneAndUpdate(
         { _id: courtId }, 
         { $push: { "slot": intervalId },
         upsert: true },
         
     ).then((result)=>{
         console.log(result)
-    })
+    }) */
    /*  console.log(resp); */
-    res.status(200).json({ msg: 'ok' })
+    res.status(200).json({ msg: 'reservation added' })
     
 });
 
-app.get('/getCourt/:id/getTime', (req, res)=>{
-    Time.find({}, (err, docs) =>{
+
+app.get('/getReservation', (req, res)=>{
+    let courtId = req.query.court;
+    let date =  Date.now();
+    Reservation.find({courtId: courtId},{ "_id": 0, "date": 0}, (err, docs) =>{
         if (err) throw err;
-        res.send(docs);
+        let arr = [];
+        docs.map(e=>{
+            arr.push(parseInt(e.interval));
+        })
+        res.send(arr);
+
     })
 })
+
+
+
+
 
 mongoose.connect(dbURL, {
     useUnifiedTopology: true,
