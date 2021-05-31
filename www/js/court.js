@@ -43,19 +43,19 @@ fetch(getURL)
     var courtId = $(this).data('id');
     console.log(courtId);
     cId = courtId;
-    // As pointed out in comments, 
-    // it is unnecessary to have to manually call the modal.
-    // $('#addBookDialog').modal('show');
     var select = document.getElementById('select');
     while (select.options.length > 0) {
       select.remove(0);
     }
-    arr = ['8:00-9:00', '9:00-10:00']
+    arr = ['8:00-9:00', '9:00-10:00', '10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','14:00-15:00','15:00-16:00','16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00','20:00-21:00']
     fetch(`/getReservation?court=${cId}&interval=1`)
     .then(res => res.json())
     .then((data) =>{
       console.log("reservations", data);
       for(var i=0; i<arr.length; i++) {
+        var hour = document.getElementById('num');
+        
+    
         if(!data.includes(i)){
           var option = document.createElement("OPTION")
           txt = document.createTextNode(arr[i]);
@@ -63,6 +63,9 @@ fetch(getURL)
           option.setAttribute("value",i);
           select.insertBefore(option, select.lastChild);
         }
+        [].forEach.call(hour, function ( hour, i ) {
+          hour.textContent = arr[i];
+      });
       }
     })
 

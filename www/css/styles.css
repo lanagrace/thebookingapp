@@ -112,6 +112,24 @@ h4{
     margin-left: 10vw;
 }
 
+.modalTitle{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 3vh;
+}
+
+.date{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: acier-bat-solid,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14pt;
+    color: #80cbc4;
+}
+
 .leaflet-popup-content-wrapper{
     text-align: center;
 }
@@ -121,24 +139,32 @@ h4{
     font-size: 12pt;
 }
 
-.grid-container{
+/* .grid-container{
     text-align: center;
     position: absolute;
     justify-content: center;
     display: inline-grid;
     grid-template-columns: auto auto auto auto auto;
 
-}
+} */
 
 .grid-item{
-    margin: 4px;
+    display: flex;
+    justify-content: center;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin: 5px;
+    font-family: niveau-grotesk,sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: rgb(235, 235, 235);
     border-radius: 5px;
 }
 
-.grid-item button{
-    border: none;
+.colorChange{
+    color: brown;
 }
+
 
 /* .mapColor {
     margin-left: 50px;
@@ -190,6 +216,9 @@ h4{
         display: flex;
         justify-content: center;
         color: #ffffff;
+        font-family: niveau-grotesk,sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     .descColor{
@@ -241,6 +270,9 @@ h4{
         display: flex;
         justify-content: center;
         color: #ffffff;
+        font-family: niveau-grotesk,sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
     
     .descColor{
@@ -281,6 +313,9 @@ h4{
         justify-content: center;
         color: #ffffff;
         font-size: 14pt;
+        font-family: niveau-grotesk,sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
 }
 
