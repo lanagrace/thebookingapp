@@ -44,10 +44,6 @@ nav ul li a{
 
 }
 
-/* .card-image{
-    width: 30vw;
-   
-} */
 
 .card-title {
     font-family: acier-bat-solid,sans-serif;
@@ -139,15 +135,6 @@ h4{
     font-size: 12pt;
 }
 
-/* .grid-container{
-    text-align: center;
-    position: absolute;
-    justify-content: center;
-    display: inline-grid;
-    grid-template-columns: auto auto auto auto auto;
-
-} */
-
 .grid-item{
     display: flex;
     justify-content: center;
@@ -157,42 +144,17 @@ h4{
     font-family: niveau-grotesk,sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: rgb(235, 235, 235);
+    background-color: #80cbc4;
     border-radius: 5px;
 }
 
 .colorChange{
-    color: brown;
+    background-color: rgb(190, 190, 190);
 }
 
-
-/* .mapColor {
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border-radius: 50px;
-    justify-content: center;
-    background-color: #795dd6;
-} */
-
-
-/* .desc{
-    padding-left: 3vh;
-    display: flex;
-    justify-content: center;
-    color: #795dd6;
-    font-size: 14pt;
+.reserved{
+    background-color: rgb(235, 176, 176);
 }
-
-.descColor{
-    position: absolute;
-    margin: 2vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    border-radius: 2em;
-} */
 
 
 
@@ -284,6 +246,8 @@ h4{
     }
 }
 
+
+
 @media only screen and (min-width: 992px){
 
     h1{
@@ -317,17 +281,25 @@ h4{
         font-weight: 400;
         font-style: normal;
     }
+
 }
 
 @media screen and (max-width: 750px) {
     .row .col{
-        margin: 0;
+        margin: 0 /* !important */;
         float: none;
+        width: auto !important;
     }
     .row .col.offset-s2{
         margin: 0;
     }
      .row .col.m5 {
         width: auto;
+    }
+
+    .row .col.s4{
+        width: auto;
+        margin-left: 3vh;
+        margin-right: 3vh;
     }
 }

@@ -91,22 +91,17 @@ app.get('/getCourt/:id', (req, res)=>{
 
 app.post('/addReservation', (req,res) => {
     //const lat = req.body.lat;
-    let interval = req.query.interval;
-    var courtId = mongoose.Types.ObjectId(req.query.court);
+    const interval = req.query.interval;
+    const name = req.query.name;
+    const reservedAt = req.query.reservedAt;
+    const courtId = mongoose.Types.ObjectId(req.query.court);
     let reservation = new Reservation({
+        name,
         courtId,
         interval,
+        reservedAt
     })
     reservation.save();
-   /*  Court.findOneAndUpdate(
-        { _id: courtId }, 
-        { $push: { "slot": intervalId },
-        upsert: true },
-        
-    ).then((result)=>{
-        console.log(result)
-    }) */
-   /*  console.log(resp); */
     res.status(200).json({ msg: 'reservation added' })
     
 });
@@ -115,14 +110,9 @@ app.post('/addReservation', (req,res) => {
 app.get('/getReservation', (req, res)=>{
     let courtId = req.query.court;
     let date =  Date.now();
-    Reservation.find({courtId: courtId},{ "_id": 0, "date": 0}, (err, docs) =>{
+    Reservation.find({courtId: courtId}, (err, docs) =>{
         if (err) throw err;
-        let arr = [];
-        docs.map(e=>{
-            arr.push(parseInt(e.interval));
-        })
-        res.send(arr);
-
+        res.send(docs);
     })
 })
 

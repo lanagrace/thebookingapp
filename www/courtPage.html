@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/mdb1ags.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
@@ -14,143 +15,61 @@
     <title>SportPage</title>
 </head>
     <body>
-            <!--Navigation bar-->
-            <div id="nav-placeholder">
+        <!--Navigation bar-->
+        <div id="nav-placeholder">
 
-            </div>
+        </div>
 
-            <script>
-                $(function(){
-                $("#nav-placeholder").load("nav.html");
-                });
-            </script>
-            <!--end of Navigation bar-->
-            <div class="titleColor">
-                <h1>   BASKETBALL   </h1>
-            </div>
+        <script>
+            $(function(){
+            $("#nav-placeholder").load("nav.html");
+            });
+        </script>
+        <!--end of Navigation bar-->
 
-            <!-- <h4>Available courts</h4>
 
-            <div class="Available"> -->
-                <!-- <div class="container"> -->
-                   <!--  <div class="row">
-                        <div class="col m5" id="courts"></div>
-                        <div class="col m4 offset-s2">
-                           
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-           <section class="mapColor">
-           <div id="map"></div>
-                <section class="descColor">
-                    <p class="desc">Choose which court you'd like to use and find out if it's already taken or not</p>
-                </section>
+        <div class="titleColor">
+            <h1>   BASKETBALL   </h1>
+        </div>
+
+        <section class="mapColor">
+            <div id="map"></div>
+            <section class="descColor">
+                <p class="desc">Choose which court you'd like to use and find out if it's already taken or not</p>
             </section>
-             <!-- <hr>
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col s8 offset-s2">
-                            <div id="calendar"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr> -->
-        <!-- Modal Structure -->
+        </section>
 
         <div id="bookCourt" class="modal">
             <div class="modal-content">
               <h4 class="modalTitle">Book a court</h4>
               <div class="row">
-                <h4 class="date"><span id="datetime"></span></h4>
+                    <h4 class="date"><span id="datetime"></span></h4>
 
-                <script>
-                var dt = new Date();
-                document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
-                </script>
-                  <div class="input-field col s4 offset-s4">
-                        <div class="grid-item" id="num">8:00-9:00</div>
-                        <div class="grid-item">9:00-10:00</div>
-                        <div class="grid-item">10:00-11:00</div>
-                        <div class="grid-item">11:00-12:00</div>
-                        <div class="grid-item">12:00-13:00</div>
-                        <div class="grid-item">13:00-14:00</div>
-                        <div class="grid-item">14:00-15:00</div>
-                        <div class="grid-item">15:00-16:00</div>
-                        <div class="grid-item">16:00-17:00</div>
-                        <div class="grid-item">17:00-18:00</div>
-                        <div class="grid-item">18:00-19:00</div>
-                        <div class="grid-item">19:00-20:00</div>
-                        <div class="grid-item">20:00-21:00</div>
+                    <script>
+                    var dt = new Date();
+                    document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+                    </script>
+
+                    <div id="tt-list" class="input-field col s4 offset-s4">
+                            <!--divs are injected here in court.js-->
                     </div>
-                <div class="input-field col s12">
-                    <p>Select a slot</p>
-                    <select class="browser-default" id="select">
-                        <option  value="-1" disabled selected>Select a slot</option>
-                    </select>
                     <div class="input-field col s12">
-                        <input id="name" type="text" class="validate">
-                        <label for="name">Enter your name</label>
+                        <p>Select a slot</p>
+                        <select class="browser-default" id="select">
+                            <option  value="-1" disabled selected>Select a slot</option>
+                        </select>
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Enter your name</label>
+                        </div>
                     </div>
-                   <!--  <label>Materialize Select</label> -->
-                </div>
               </div>
             </div>
             <div class="modal-footer">
               <button id="buton" class="modal-close waves-effect waves-green black-text btn-flat">Book</button>
             </div>
         </div>
-        <!-- Modal Trigger -->
-    
-
-        <!-- Modal Structure -->
-    <!--     <div id="dateAddModal" class="modal">
-            <div class="modal-content">
-                <h4>Date Select</h4>
-                <div class="row">
-                    <form class="col s8 offset-s2" action="/addDate" method="POST">
-                        <div class="input-field">
-                            <input placeholder="Placeholder" id="date" name="date" type="text" class="validate">
-                            <label for="date">Date</label>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div> -->
-
-    <!--     <p>Date/Time: <span id="datetime"></span></p>
-        <div class="grid-container">
-            <div class="grid-item"><button id="color">8:00</button></div>
-            <div class="grid-item"><button id="color"><time datetime='8:30' id="test"> 8:30 </time></button></div>
-            <div class="grid-item"><button id="color">9:00</button></div>
-            <div class="grid-item"><button id="color">9:30</button></div>
-            <div class="grid-item"><button id="color">10:00</button></div>
-            <div class="grid-item"><button id="color">10:30</button></div>
-            <div class="grid-item"><button id="color">11:00</button></div>
-            <div class="grid-item"><button id="color">11:30</button></div>
-            <div class="grid-item"><button id="color">12:00</button></div>
-            <div class="grid-item"><button id="color">12:30</button></div>
-            <div class="grid-item"><button id="color">13:00</button></div>
-            <div class="grid-item"><button id="color">13:30</button></div>
-            <div class="grid-item"><button id="color">14:00</button></div>
-            <div class="grid-item"><button id="color">14:30</button></div>
-            <div class="grid-item"><button id="color">15:00</button></div>
-            <div class="grid-item"><button id="color">15:30</button></div>
-            <div class="grid-item"><button id="color">16:00</button></div>
-            <div class="grid-item"><button id="color">16:30</button></div>
-            <div class="grid-item"><button id="color">17:00</button></div>
-            <div class="grid-item"><button id="color">17:30</button></div>
-            <div class="grid-item"><button id="color">17:30</button></div>
-            <div class="grid-item"><button id="color">18:00</button></div>
-            <div class="grid-item"><button id="color">18:30</button></div>
-            <div class="grid-item"><button id="color">19:00</button></div>
-            <div class="grid-item"><button id="color">19:30</button></div>
-            <div class="grid-item"><button id="color">20:00</button></div>
-            <div class="grid-item"><button id="color">20:30</button></div>
-            <div class="grid-item"><button id="color">21:00</button></div> 
-        </div> -->
+ 
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
