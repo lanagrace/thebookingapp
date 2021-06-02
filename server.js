@@ -17,7 +17,7 @@ app.use(express.urlencoded({
 app.use(express.static('www'));
 
 app.get('/', (req, res)=>{
-    res.sendFile('index.html');
+    res.sendFile('/home.html');
 });
 
 app.post('/addSport', (req,res) => {
@@ -109,7 +109,6 @@ app.post('/addReservation', (req,res) => {
 
 app.get('/getReservation', (req, res)=>{
     let courtId = req.query.court;
-    let date =  Date.now();
     Reservation.find({courtId: courtId}, (err, docs) =>{
         if (err) throw err;
         res.send(docs);

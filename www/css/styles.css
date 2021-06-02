@@ -1,3 +1,54 @@
+
+.mainImg{
+    height: auto;
+
+}
+
+.About{
+    justify-content: center;
+    text-align: center;
+    padding: 4vh;
+}
+.title{
+    margin-left: 0;
+    text-align: center;
+    font-family: acier-bat-solid,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32pt;
+    color: #80cbc4 ;
+}
+
+ a{
+    color: white;
+    font-size: 48pt;
+}
+
+.aboutDesc{
+    color: rgb(0, 0, 0);
+    font-family: niveau-grotesk,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 2vh;
+    justify-content: center;
+    border-radius: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    word-spacing: 2px;
+    line-height: 30px;
+}
+
+a .homeButton{
+    font-size: large;
+}
+
+.grid-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
 .nav-wrapper{
     padding-left: 20px;
 }
@@ -8,7 +59,7 @@
 
 body{
     background-color: #ffffff;
-    margin-bottom: 5vh;
+    /* margin-bottom: 5vh; */
 }
 
 nav {
@@ -82,7 +133,7 @@ nav ul li a{
    
 }
 
-h1{
+.sportName{
     text-align: center;
     margin-bottom: 5vh;
     padding: 20px;
@@ -191,7 +242,7 @@ h4{
         border-radius: 2em;
     }
 
-    h1{
+    .sportName{
         text-align: center;
         margin-bottom: 2vh;
         padding: 10px;
@@ -208,7 +259,7 @@ h4{
 
   
 @media only screen and (min-width: 600px) {
-    h1{
+    .sportName{
         text-align: center;
         margin-bottom: 2vh;
         padding: 10px;
@@ -250,7 +301,7 @@ h4{
 
 @media only screen and (min-width: 992px){
 
-    h1{
+   .sportName{
         text-align: center;
         margin-bottom: 2vh;
         padding: 20px;
@@ -261,6 +312,15 @@ h4{
         color: white;
         background-color: #80cbc4 ;
         border-radius: 2em;
+    }
+
+    .title{ 
+        margin-left: 0;
+        text-align: center;
+        font-family: acier-bat-solid,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 32pt;
     }
 
     .mapColor {
@@ -302,4 +362,19 @@ h4{
         margin-left: 3vh;
         margin-right: 3vh;
     }
+}
+
+@media screen and (max-width: 1120px) {
+    .mainImg{
+        visibility: none;
+    }
+
+    .grid-container{
+        width: 100%;
+        height: auto;
+        display: flex;
+        grid-template-columns: auto;
+        flex-direction: column;
+    }
+    
 }
