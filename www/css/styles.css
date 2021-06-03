@@ -1,14 +1,18 @@
 
+/* image on the home page */
 .mainImg{
     height: auto;
 
 }
 
+/* app description on the home page - div */
 .About{
     justify-content: center;
     text-align: center;
     padding: 4vh;
 }
+
+/* title of the app on home.html */
 .title{
     margin-left: 0;
     text-align: center;
@@ -24,6 +28,7 @@
     font-size: 48pt;
 }
 
+/* app description - text */
 .aboutDesc{
     color: rgb(0, 0, 0);
     font-family: niveau-grotesk,sans-serif;
@@ -38,10 +43,12 @@
     line-height: 30px;
 }
 
+/* button on the home page */
 a .homeButton{
     font-size: large;
 }
 
+/* home page is made of a grid with two columns */
 .grid-container{
     width: 100%;
     height: auto;
@@ -79,6 +86,7 @@ nav ul li a{
 
   }
 
+  /* list of sports */
 .card {
     border-radius: 1em;
     overflow: hidden;
@@ -95,7 +103,7 @@ nav ul li a{
 
 }
 
-
+/* font of the card */
 .card-title {
     font-family: acier-bat-solid,sans-serif;
     font-weight: 400;
@@ -105,9 +113,9 @@ nav ul li a{
 
 .card .card-title{
     font-size: 26pt;
-    font-weight: 700;
 }
 
+/* button on the cards */
 .waves-effect{
     border-radius: 2em;
     font-family: acier-bat-solid,sans-serif;
@@ -115,35 +123,6 @@ nav ul li a{
     font-style: normal;
     font-size: 14pt;
     
-}
-
-
-#courts .waves-effect{
-    width: 30%;
-    border-radius: 2em;
-    font-family: acier-bat-solid,sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14pt;
-}
-
-.titleColor {
-    display: flex;
-    justify-content: center;
-   
-}
-
-.sportName{
-    text-align: center;
-    margin-bottom: 5vh;
-    padding: 20px;
-    font-family: acier-bat-solid,sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 32pt;
-    color: white;
-    background-color: #80cbc4 ;
-    border-radius: 2em;
 }
 
 h4{
@@ -155,9 +134,6 @@ h4{
     font-size: 14pt;
 }
 
-#courts{
-    margin-left: 10vw;
-}
 
 .modalTitle{
     display: flex;
@@ -166,6 +142,7 @@ h4{
     margin-bottom: 3vh;
 }
 
+/* date in the modal */
 .date{
     margin: 0;
     display: flex;
@@ -186,6 +163,7 @@ h4{
     font-size: 12pt;
 }
 
+/* dashboard with the sport list */
 .grid-item{
     display: flex;
     justify-content: center;
@@ -195,14 +173,14 @@ h4{
     font-family: niveau-grotesk,sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-color: #80cbc4;
     border-radius: 5px;
 }
 
+/* this class is added when the slot invalid */
 .colorChange{
     background-color: rgb(190, 190, 190);
 }
-
+/* this class is added when the slot is taken */
 .reserved{
     background-color: rgb(235, 176, 176);
 }
@@ -217,6 +195,7 @@ h4{
         border-radius: 2em;
     }
 
+    /* the background behind the map */
     .mapColor {
         padding-top: 20px;
         padding-bottom: 2vh;
@@ -225,6 +204,7 @@ h4{
         margin-top: 40px; 
     }
 
+     /* text below the map */
     .desc{
         margin: 10px;
         display: flex;
@@ -235,6 +215,7 @@ h4{
         font-style: normal;
     }
 
+    /* background color for the text */
     .descColor{
         margin: 2vh;
         background-color: #80cbc4;
@@ -243,36 +224,13 @@ h4{
         border-radius: 2em;
     }
 
-    .sportName{
-        text-align: center;
-        margin-bottom: 2vh;
-        padding: 10px;
-        font-family: acier-bat-solid,sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 24pt;
-        color: white;
-        background-color: #80cbc4;
-        border-radius: 2em;
-    }
-
   }
 
   
 @media only screen and (min-width: 600px) {
-    .sportName{
-        text-align: center;
-        margin-bottom: 2vh;
-        padding: 10px;
-        font-family: acier-bat-solid,sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 28pt;
-        color: white;
-        background-color: #80cbc4;
-        border-radius: 2em;
-    }
+    
 
+   /*  the background behind the map */
     .mapColor {
         padding-top: 20px;
         padding-bottom: 2vh;
@@ -281,6 +239,7 @@ h4{
         margin-top: 40px; 
     }
 
+    /* text below the map */
     .desc{
         display: flex;
         justify-content: center;
@@ -290,6 +249,7 @@ h4{
         font-style: normal;
     }
     
+    /* background color for the text */
     .descColor{
         margin: 2vh;
         background-color: #80cbc4 ;
@@ -303,19 +263,7 @@ h4{
 
 @media only screen and (min-width: 992px){
 
-   .sportName{
-        text-align: center;
-        margin-bottom: 2vh;
-        padding: 20px;
-        font-family: acier-bat-solid,sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 32pt;
-        color: white;
-        background-color: #80cbc4 ;
-        border-radius: 2em;
-    }
-
+    /* home page app title */
     .title{ 
         margin-left: 0;
         text-align: center;
@@ -325,6 +273,7 @@ h4{
         font-size: 32pt;
     }
 
+    /* the background behind the map */
     .mapColor {
         margin-left: 10vh;
         margin-right: 10vh;
@@ -335,6 +284,7 @@ h4{
         margin-top: 40px; 
     }
 
+     /* text below the map */
     .desc{
         display: flex;
         justify-content: center;
@@ -349,7 +299,7 @@ h4{
 
 @media screen and (max-width: 750px) {
     .row .col{
-        margin: 0 /* !important */;
+        margin: 0;
         float: none;
         width: auto !important;
     }
@@ -367,6 +317,7 @@ h4{
     }
 }
 
+/* media query for the home page */
 @media screen and (max-width: 1120px) {
     .mainImg{
         visibility: none;

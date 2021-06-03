@@ -6,8 +6,9 @@ const Court = require('./models/Court.js');
 const Reservation = require('./models/Reservation.js');
 const url = require('url');
 
+
 var port = process.env.PORT || 3000;
-var dbURL =process.env.mongoURL || 'mongodb://localhost:27017/bookingapp';
+var dbURL = process.env.mongoURL || 'mongodb://localhost:27017/bookingapp';
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -20,6 +21,7 @@ app.get('/', (req, res)=>{
     res.sendFile('/home.html');
 });
 
+/* creating sport object based on a schema */
 app.post('/addSport', (req,res) => {
     //const lat = req.body.lat;
     const { name } = req.body;
@@ -33,6 +35,7 @@ app.post('/addSport', (req,res) => {
     
 });
 
+/* getting the data */
 app.get('/getSport', (req, res)=>{
     Sport.find({}, (err, docs) =>{
         if (err) throw err;
@@ -40,7 +43,7 @@ app.get('/getSport', (req, res)=>{
     })
 })
 
-
+/* creating a court object based on a schema */
 app.post('/addCourt', (req,res) => {
     //const lat = req.body.lat;
     
@@ -66,7 +69,6 @@ app.post('/addCourt', (req,res) => {
 
 app.get('/courts/:id', (req, res)=>{
     var id = req.params.id;
-    var title = req.params.name;
 
     res.redirect(url.format({
         pathname:"/courtPage.html",

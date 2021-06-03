@@ -1,5 +1,5 @@
 
-
+/* gets the data from /getSport url and creates a list of cards with sport names */
 var getURL = '/getSport';
 var sportList = document.querySelector('#sportList');
 fetch(getURL)
