@@ -6,8 +6,8 @@ const Court = require('./models/Court.js');
 const Reservation = require('./models/Reservation.js');
 const url = require('url');
 
-var port = 3000;
-var dbURL = 'mongodb://localhost:27017/bookingapp';
+var port = process.env || 3000;
+var dbURL =process.env.mongoURL || 'mongodb://localhost:27017/bookingapp';
 
 app.use(express.json());
 app.use(express.urlencoded({
