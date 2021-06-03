@@ -66,6 +66,7 @@ app.post('/addCourt', (req,res) => {
 
 app.get('/courts/:id', (req, res)=>{
     var id = req.params.id;
+    var title = req.params.name;
 
     res.redirect(url.format({
         pathname:"/courtPage.html",

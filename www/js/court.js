@@ -41,9 +41,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     
     })
   });
-  /* on click glavna funkc - klikom na modal buton pokrece se funkc kojom dohvacamo
-  courtId iz data-id atributa naseg buttona tako znamo da pri dohvatu rezervacija
-  dobijemo samo one koje su kreirane ya taj teren*/
+ 
     var cId;
     let arr = ['8:00-9:00', '9:00-10:00', '10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','14:00-15:00','15:00-16:00','16:00-17:00','17:00-18:00','18:00-19:00','19:00-20:00','20:00-21:00', '21:00-22:00', '22:00-23:00', '23:00-24:00']
     $(document).on("click", ".modal-trigger", function () {
@@ -55,22 +53,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
       while (select.options.length > 0) {
         select.remove(0);
       }
-      /* poyivanje get rute koja vraca podatke ya rez filtr po id terena  */
+     
       fetch(`/getReservation?court=${cId}&interval=1`)
       .then(res => res.json())
       .then((data) =>{
         let date = Date.now();
-        /* moment ya vriijeme */
         let currentHour = moment(date).format("HH");
         console.log(data)
         var option = document.createElement("OPTION")
         txt = document.createTextNode("-");
         option.appendChild(txt);
         select.insertBefore(option, select.lastChild);
-        /* property od rez u integer */
         let intervals = data.map(e => {
           return parseInt(e.interval);
-          /* mjenja string u integer*/
         })
         var ttList = document.getElementById('tt-list');
         var datafeed = arr.map((item, index) =>{
